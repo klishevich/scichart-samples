@@ -1,5 +1,5 @@
 import { SciChartSurface, NumericAxis, BoxAnnotation, LineAnnotation, SvgLineAnnotation, CompositeAnnotation, PolyLineAnnotation, ESnapMode } from "scichart";
-import { ChannelAnnotation, DisjointChannelAnnotation, FlatBottomChannelAnnotation, PitchfanAnnotation, PitchforkAnnotation } from "scichart-financial-tools";
+import { ChannelAnnotation, DisjointChannelAnnotation, FlatBottomChannelAnnotation, PitchfanAnnotation, PitchforkAnnotation, SciTraderDarkTheme } from "scichart-financial-tools";
 import { addDefaultTradingAnnotationModifiers, createStressAnnotationOptions, createTradingCandlestickDemo } from "./utils";
 
 async function pitchForkExample() {
@@ -180,4 +180,25 @@ async function polyLineExample() {
 
     return { sciChartSurface };
 }
-polyLineExample();
+// polyLineExample();
+
+async function channelAnnotationExample() {
+    const { sciChartSurface, wasmContext } = await SciChartSurface.create("scichart-root4");
+
+    sciChartSurface.applyTheme(new SciTraderDarkTheme());
+    sciChartSurface.xAxes.add(new NumericAxis(wasmContext));
+    sciChartSurface.yAxes.add(new NumericAxis(wasmContext));
+
+    sciChartSurface.annotations.add(
+        new ChannelAnnotation({
+            points: [
+            { x: 1, y: 1 },
+            { x: 5, y: 5 },
+            { x: 8, y: 8 },
+        ],
+        })
+    );
+
+    sciChartSurface.zoomExtents();
+}
+channelAnnotationExample();

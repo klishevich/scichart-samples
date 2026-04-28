@@ -2,7 +2,7 @@
 
 Standalone SciChart.js example pinned to `scichart@5.1.9` (registry: `myget`).
 
-![chart](img/chart.png)
+![chart](img/image.png)
 
 ## Run
 
