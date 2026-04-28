@@ -2,10 +2,8 @@ import { SciChartSurface, NumericAxis, BoxAnnotation, LineAnnotation, SvgLineAnn
 import { ChannelAnnotation, DisjointChannelAnnotation, FlatBottomChannelAnnotation, PitchfanAnnotation, PitchforkAnnotation } from "scichart-financial-tools";
 import { addDefaultTradingAnnotationModifiers, createStressAnnotationOptions, createTradingCandlestickDemo } from "./utils";
 
-const rootElement = "scichart-root";
-
 async function pitchForkExample() {
-    const { sciChartSurface, wasmContext } = await SciChartSurface.create(rootElement);
+    const { sciChartSurface, wasmContext } = await SciChartSurface.create("scichart-root1");
 
     sciChartSurface.xAxes.add(new NumericAxis(wasmContext));
     sciChartSurface.yAxes.add(new NumericAxis(wasmContext));
@@ -25,7 +23,7 @@ async function pitchForkExample() {
 pitchForkExample();
 
 async function compositeAnnotationExample() {
-    const { sciChartSurface, wasmContext } = await SciChartSurface.create(rootElement);
+    const { sciChartSurface, wasmContext } = await SciChartSurface.create("scichart-root2");
 
     sciChartSurface.xAxes.add(new NumericAxis(wasmContext));
     sciChartSurface.yAxes.add(new NumericAxis(wasmContext));
@@ -75,7 +73,7 @@ async function compositeAnnotationExample() {
     });
     sciChartSurface.annotations.add(comp);
 }
-// compositeAnnotationExample();
+compositeAnnotationExample();
 
 export const tradingExample = async () => {
     const CHANNEL_SEGMENT_PAIRS = [
@@ -84,7 +82,7 @@ export const tradingExample = async () => {
         [0, 2],
         [1, 3],
     ] as const;
-    const { sciChartSurface, xAt, yAt } = await createTradingCandlestickDemo(rootElement);
+    const { sciChartSurface, xAt, yAt } = await createTradingCandlestickDemo("scichart-root3");
 
     const channel = new ChannelAnnotation({
         ...createStressAnnotationOptions(0, 4, "CHN", undefined, { segmentPairs: CHANNEL_SEGMENT_PAIRS }),
@@ -137,10 +135,10 @@ export const tradingExample = async () => {
 
     return { sciChartSurface };
 };
-// tradingExample();
+tradingExample();
 
 async function polyLineExample() {
-    const { sciChartSurface, xAt, yAt } = await createTradingCandlestickDemo(rootElement);
+    const { sciChartSurface, xAt, yAt } = await createTradingCandlestickDemo("scichart-root4");
 
     const freePolyline = new PolyLineAnnotation({
         ...createStressAnnotationOptions(0, 5, "PLY"),
@@ -182,4 +180,4 @@ async function polyLineExample() {
 
     return { sciChartSurface };
 }
-// polyLineExample();
+polyLineExample();
