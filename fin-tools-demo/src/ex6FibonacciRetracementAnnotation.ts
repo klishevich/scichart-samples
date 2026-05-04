@@ -15,7 +15,7 @@ export async function ex6FibonacciRetracementAnnotation() {
         isEditable: true,
         strokeThickness: 2,
         fillOpacity: 0.25,
-        showConnectorLine: true,
+        showConnectorLine: false,
         connectorLineStroke: "#F8FAFCAA",
         fibonacciLabelFontSize: 10,
         points: [
@@ -42,7 +42,7 @@ export async function ex6FibonacciRetracementAnnotation() {
             "#064a6a"
         ],
         fillOpacity: 0.2,
-        verticalOnly: true,
+        verticalOnly: false,
         showConnectorLine: true,
         connectorLineStrokeDashArray: [10, 0],
 
@@ -56,7 +56,7 @@ export async function ex6FibonacciRetracementAnnotation() {
         points: [
             { x: 6, y: 1 },
             { x: 9, y: 1 },
-            { x: 9, y: 3 },
+            { x: 9.2, y: 3 },
         ],
         labels: [
             {

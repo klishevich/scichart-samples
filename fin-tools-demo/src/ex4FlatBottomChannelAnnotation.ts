@@ -12,7 +12,7 @@ export async function ex4FlatBottomChannelAnnotation() {
         points: [
             { x: 1, y: 5 },
             { x: 5, y: 8 },
-            { x: 5, y: 5 },
+            { x: 5, y: 3 },
         ],
     });
 

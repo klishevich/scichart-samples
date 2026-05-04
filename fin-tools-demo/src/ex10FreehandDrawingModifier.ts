@@ -6,14 +6,9 @@ export async function ex10FreehandDrawingModifier() {
     sciChartSurface.xAxes.add(new NumericAxis(wasmContext));
     sciChartSurface.yAxes.add(new NumericAxis(wasmContext));
 
-    const freehandDrawingModifier = new FreehandDrawingModifier({
-        // isDrawing: false,
-        minPointDistancePx: 2,
-        simplifyTolerancePx: 1.2,
-        keepDrawingAfterComplete: true,
-        pointSamplingDistancePx: 0.1
-    });
+    const freeMod = new FreehandDrawingModifier({ keepDrawingAfterComplete: true });
+    freeMod.startDrawing({});
 
-    sciChartSurface.chartModifiers.add(freehandDrawingModifier);
+    sciChartSurface.chartModifiers.add(freeMod);
     sciChartSurface.zoomExtents();
 }

@@ -9,6 +9,7 @@ export async function ex3ChannelAnnotation() {
 
     const channelAnnotation = new ChannelAnnotation({
         isEditable: true,
+        isSelected: true,
         points: [
             { x: 1, y: 5 },
             { x: 4, y: 8 },

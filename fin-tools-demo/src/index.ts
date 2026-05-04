@@ -11,6 +11,7 @@ import { ex10FreehandDrawingModifier } from "./ex10FreehandDrawingModifier";
 import { ex11HeikinAshiDataFilter } from "./ex11HeikinAshiDataFilter";
 import { ex12RenkoDataFilter } from "./ex12RenkoDataFilter";
 import { ex13ComplexExample } from "./ex13ComplexExample";
+import { ex14PointAndFigureFilter } from "./ex14PointAndFigureFilter";
 
 // Attach to window so HTML can access them
 const w = window as any;
@@ -27,3 +28,4 @@ w.ex10FreehandDrawingModifier = ex10FreehandDrawingModifier;
 w.ex11HeikinAshiDataFilter = ex11HeikinAshiDataFilter;
 w.ex12RenkoDataFilter = ex12RenkoDataFilter;
 w.ex13ComplexExample = ex13ComplexExample;
+w.ex14PointAndFigureFilter = ex14PointAndFigureFilter;

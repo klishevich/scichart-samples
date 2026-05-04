@@ -1,5 +1,5 @@
-import { SciChartSurface, NumericAxis } from "scichart";
-import { MultiPointAnnotationPlacementModifier } from "scichart-financial-tools";
+import { SciChartSurface, NumericAxis, EAnnotationType, FreehandDrawingModifier } from "scichart";
+import { ETradingAnnotationType, MultiPointAnnotationPlacementModifier } from "scichart-financial-tools";
 
 export async function ex9MultiPointAnnotationPlacementModifier() {
     const { sciChartSurface, wasmContext } = await SciChartSurface.create("scichart-root");
@@ -8,8 +8,14 @@ export async function ex9MultiPointAnnotationPlacementModifier() {
     sciChartSurface.yAxes.add(new NumericAxis(wasmContext));
 
     const placementModifier = new MultiPointAnnotationPlacementModifier({
-        // isPlacing: false,
-        // keepPlacingAfterComplete: false
+        // isPlacing: true,
+        keepPlacingAfterComplete: false
+    });
+
+    placementModifier.startPlacement({
+        type: ETradingAnnotationType.PitchforkAnnotation, options: {
+            isEditable: true
+        }
     });
 
     sciChartSurface.chartModifiers.add(placementModifier);

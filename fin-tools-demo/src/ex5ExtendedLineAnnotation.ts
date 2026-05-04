@@ -9,6 +9,7 @@ export async function ex5ExtendedLineAnnotation() {
 
     const annotation = new ExtendedLineAnnotation({
         isEditable: true,
+        isSelected: true,
         points: [
             { x: 2, y: 2 },
             { x: 6, y: 6 },
